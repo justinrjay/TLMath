@@ -1,0 +1,6 @@
+c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\bin\Debug\LottoStuff.exe.config
+c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\bin\Debug\LottoStuff.exe
+c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\bin\Debug\LottoStuff.pdb
+c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\obj\Debug\LottoStuff.exe
+c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\obj\Debug\LottoStuff.pdb
+c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\obj\Debug\LottoStuff.csprojResolveAssemblyReference.cache
