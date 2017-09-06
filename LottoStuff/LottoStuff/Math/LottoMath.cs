@@ -51,6 +51,15 @@ namespace LottoStuff
         public List<List<LottoOddsTable>> FactorTableLists { get; set; }
 
         /// <summary>
+        /// Has the lists for range of numbers.  For example 1-9, 10-19 etc.
+        /// </summary>
+        public List<List<int>> RangeLists { get; set; }
+
+        /// <summary>
+        /// Odds table for RangeLists.  Should be 1:1 to RangelIsts
+        /// </summary>
+        public List<List<LottoOddsTable>> RangeTableLists { get; set; }
+        /// <summary>
         /// The max factor in the drawing that can produce the number drawn.  Foe example, a drawing of 54 numbers and 6 drawn would have a max of 9
         /// 9, 18, 27, 36, 45, 54.  Any larger number would only return 5 numbers
         /// </summary>
@@ -75,6 +84,8 @@ namespace LottoStuff
             FactorLists = ReturnFactorLists();
             PrimeTableList = PrimeTable();
             FactorTableLists = FactorTable();
+            RangeLists = GetRangeLists();
+            RangeTableLists = GetRangeTable();
         }
 
         /// <summary>
@@ -249,6 +260,47 @@ namespace LottoStuff
             }
             PrimeNumbers.Sort();
             return PrimeNumbers;
+        }
+
+        /// <summary>
+        /// Gets the lists of all range of numbers.  For example 1-9, 10-19, 20-29 and so on.  Generates a list for each one.
+        /// </summary>
+        /// <returns></returns>
+        private List<List<int>> GetRangeLists()
+        {
+            int counter = 1;
+            List<List<int>> returnList = new List<List<int>>();
+            int x = 0;
+
+            //Generates a list for each range
+            while (x <= NumbersInDraw / 10)
+            {
+                returnList.Add(new List<int>());
+                x++;
+            }
+
+            //Populates the list for each range
+            while (counter <= NumbersInDraw)
+            {
+                //ListIndex will be equal to counter divisible by 10.  EX 1-9, all divided by 10 will be 0, and thus added to the list index of 0.  
+                int listIndex = counter / 10;
+                returnList[listIndex].Add(counter);
+                counter++;
+            }
+            return returnList;
+        }
+
+        public List<List<LottoOddsTable>> GetRangeTable()
+        {
+            int counter = 0;
+            
+            List<List<LottoOddsTable>> rangeTables = new List<List<LottoOddsTable>>();
+            while (counter < RangeLists.Count)
+            {
+                rangeTables.Add(OddsOfPool(RangeLists[counter].Count));
+                counter++;
+            }
+            return rangeTables;
         }
     }
 
