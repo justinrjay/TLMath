@@ -11,9 +11,8 @@ namespace LottoStuff
     {
         static void Main(string[] args)
         {
-            LottoComparison lc = new LottoComparison(54, 6);
-            List<int> draw1 = new List<int> { 3, 6, 9, 12, 15, 18 };
-            Console.WriteLine(lc.FactorsDisqualified(draw1));
+            LottoNumberGeneration lng = new LottoNumberGeneration();
+            Console.WriteLine(lng.NumberPool.Count);
         }
 
         static void WriteTable(LottoOddsTable lot)

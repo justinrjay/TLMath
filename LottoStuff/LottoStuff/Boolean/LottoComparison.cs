@@ -48,6 +48,18 @@ namespace LottoStuff
             }
             return disqualified;
         }
+
+        //Loops through the range lists, and disqualifies it if the conditions do not match.  Returns true when conditions don't match
+        public bool RangesDisqualified(List<int> drawList)
+        {
+            bool disqualified = false;
+            int counter = 0;
+            while (!disqualified && counter < RangeLists.Count)
+            {
+                disqualified = NumberDisqualified(drawList, RangeLists[counter], RangeTableLists[counter]);
+            }
+            return disqualified;
+        }
         
     }
 }

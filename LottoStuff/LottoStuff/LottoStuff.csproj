@@ -47,6 +47,7 @@
     <Compile Include="Boolean\LottoComparison.cs" />
     <Compile Include="cashfive.cs" />
     <Compile Include="Interface\LottoBase.cs" />
+    <Compile Include="LottoNumberGeneration.cs" />
     <Compile Include="Math\LottoMath.cs" />
     <Compile Include="lottofunctions.cs" />
     <Compile Include="powerball.cs" />

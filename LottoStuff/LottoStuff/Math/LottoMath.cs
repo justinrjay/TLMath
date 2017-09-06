@@ -290,6 +290,10 @@ namespace LottoStuff
             return returnList;
         }
 
+        /// <summary>
+        /// Gets the odds of the range lists.  
+        /// </summary>
+        /// <returns></returns>
         public List<List<LottoOddsTable>> GetRangeTable()
         {
             int counter = 0;
