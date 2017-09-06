@@ -8,21 +8,58 @@ namespace LottoStuff
 {
     public class LottoMath
     {
+        /// <summary>
+        /// How many numbers are in the pool to be drawn from
+        /// </summary>
         public int NumbersInDraw { get; set; }
+
+        /// <summary>
+        /// How many numbers will be drawn
+        /// </summary>
         public int NumbersDrawn { get; set; }
+
+        /// <summary>
+        /// Returns the total number of combinations that are in the drawing
+        /// </summary>
         public long OddsOfDraw {
             get {
                 return GetOdds(NumbersInDraw, NumbersDrawn);
             }
         }
+
+        /// <summary>
+        /// A list of integers that contains all of the prime numbers in the pool
+        /// </summary>
+        public List<int> PrimeListInDraw { get; set; }
+
+        /// <summary>
+        /// The odds table for prime numbers.  Returns a list the size of the numbers drawn + 1.  Ex 5 number drawing has 6 entries.  One for 5 numbers drawn, 4 numbers drawn, and so on until 0
+        /// Table contains the number in draw, the number of combinations that number drawn can create, and the odds of that happening
+        /// </summary>
         public List<LottoOddsTable> PrimeTableList { get; set; }
-        
+
+        /// <summary>
+        /// This is a list, of each list of factors up to the max factor(highest factor that produces at least enough to fill the drawing).  
+        /// For example, if there drawing is 54 numbers, and 6 drawn, it would contain lists of all factors from 2 to 9.
+        /// </summary>
+        public List<List<int>> FactorLists { get; set; }
+
+        /// <summary>
+        /// Similar to the primetablelist, except this odds tables for all factors from 2 to the max factor.
+        /// Has a 1:1 relationship with the factorlists table
+        /// </summary>
         public List<List<LottoOddsTable>> FactorTableLists { get; set; }
 
+        /// <summary>
+        /// The max factor in the drawing that can produce the number drawn.  Foe example, a drawing of 54 numbers and 6 drawn would have a max of 9
+        /// 9, 18, 27, 36, 45, 54.  Any larger number would only return 5 numbers
+        /// </summary>
         public int HighFactor { get { return NumbersInDraw / NumbersDrawn; } }
 
-        public List<List<int>> FactorLists { get; set; }
-        public List<int> PrimeListInDraw { get; set; }
+        
+        /// <summary>
+        /// The number of primes from the Prime List in Draw.  Just a simple property to return the exact number of primes in a given drawing
+        /// </summary>
         public int PrimesInDraw
         {
             get
