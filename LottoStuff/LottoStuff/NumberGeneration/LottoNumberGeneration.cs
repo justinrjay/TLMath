@@ -12,7 +12,7 @@ namespace LottoStuff
         public LottoNumberGeneration()
         {
             NumberPool = new List<List<int>>();
-            GenerateNum(54, 6);
+            GenerateNum(69, 5);
         }
 
         /// <summary>

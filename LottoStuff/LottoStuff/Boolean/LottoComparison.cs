@@ -57,8 +57,19 @@ namespace LottoStuff
             while (!disqualified && counter < RangeLists.Count)
             {
                 disqualified = NumberDisqualified(drawList, RangeLists[counter], RangeTableLists[counter]);
+                counter++;
             }
             return disqualified;
+        }
+
+        public bool IsNumberDisqualifed(List<int> drawList)
+        {
+            return !PrimeDisqualified(drawList) 
+               &&
+                !FactorsDisqualified(drawList) 
+                && 
+                RangesDisqualified(drawList)
+                ;
         }
         
     }

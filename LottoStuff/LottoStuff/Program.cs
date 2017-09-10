@@ -11,8 +11,16 @@ namespace LottoStuff
     {
         static void Main(string[] args)
         {
-            LottoNumberGeneration lng = new LottoNumberGeneration();
-            Console.WriteLine(lng.NumberPool.Count);
+            LottoCsvFileHandling lcsv = new LottoCsvFileHandling(@"C:\Users\Fonix\Downloads\lottotexas.csv");
+            LottoComparison lc = new LottoComparison(54, 6);
+            int numberFailed = 0;
+            foreach (List<int> lottoDraw in lcsv.SortedList)
+            {
+                if (lc.IsNumberDisqualifed(lottoDraw))
+                    numberFailed++;
+            }
+            Console.WriteLine(numberFailed);
+            Console.WriteLine(lcsv.SortedList.Count);
         }
 
         static void WriteTable(LottoOddsTable lot)
