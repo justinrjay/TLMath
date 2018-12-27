@@ -4,3 +4,20 @@ c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\bin\D
 c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\obj\Debug\LottoStuff.exe
 c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\obj\Debug\LottoStuff.pdb
 c:\users\fonix\documents\visual studio 2015\Projects\LottoStuff\LottoStuff\obj\Debug\LottoStuff.csprojResolveAssemblyReference.cache
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\LottoStuff.exe
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.csproj.CoreCompileInputs.cache
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.abstractions.dll
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.runner.reporters.net452.dll
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.runner.utility.net452.dll
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\LottoStuff.exe.config
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\LottoStuff.pdb
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.assert.dll
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.core.dll
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.execution.desktop.dll
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.assert.xml
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.core.xml
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.execution.desktop.xml
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.csproj.CopyComplete
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.exe
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.pdb

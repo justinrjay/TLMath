@@ -7,13 +7,8 @@ using System.IO;
 
 namespace LottoStuff
 {
-    class lottofunctions
+    public class lottofunctions
     {
-        public lottofunctions()
-        {
-
-        }
-
         public List<int[]> returnmatch(List<int[]> checklist, int[] disqualifiers, int matchamount)
         {
             List<int[]> returnlist = new List<int[]>();
@@ -101,6 +96,26 @@ namespace LottoStuff
                 }
                 Array.Sort(newarray);
                 numlist.Add(newarray);
+            }
+            return numlist;
+        }
+
+        public List<List<int>> GetListFromFile(string filepath, int startindex, int numvalues)
+        {
+            var reader = new StreamReader(File.OpenRead(filepath));
+            List<List<int>> numlist = new List<List<int>>();
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var values = line.Split(',');
+                int x = 0;
+                List<int> newList = new List<int>();
+                while (x < numvalues)
+                {
+                   newList.Add(Convert.ToInt16(values[startindex + x]));
+                    x++;
+                }
+                numlist.Add(newList);
             }
             return numlist;
         }
@@ -202,74 +217,6 @@ namespace LottoStuff
                 num1++;
             }
             return numlist;
-        }
-
-        public bool CheckFactor(int[] numlist, int factor, int[] matches)
-        {
-            int matchcount = 0;
-            foreach (int num in numlist)
-            {
-                if (num % factor == 0)
-                {
-                    matchcount++;
-                }
-            }
-            return matches.Contains(matchcount);
-        }
-
-        public bool CheckRange(int[] numlist, int startrange, int endrange, int[] matches)
-        {
-            int matchcount = 0;
-            foreach (int num in numlist)
-            {
-                if (num >= startrange && num <= endrange)
-                {
-                    matchcount++;
-                }
-            }
-            return matches.Contains(matchcount);
-        }
-
-        public bool CheckPrime(int number)
-        {
-            long sqrrt = (long)Math.Round(Math.Sqrt(number));
-            List<int> numlist = new List<int>();
-            int x = 2;
-            while (x <= sqrrt)
-            {
-                numlist.Add(x);
-                int y = 0;
-                while (numlist.Contains(x) && (y < numlist.Count - 1))
-                {
-                    if (x % numlist[y] == 0)
-                    {
-                        numlist.Remove(x);
-                    }
-                    else
-                    {
-                        y++;
-                    }
-                }
-                if (number % x != 0)
-                {
-                    numlist.Remove(x);
-                }
-                x++;
-            }
-            return numlist.Count == 0;
-        }
-
-        public bool CheckPrimeMatches(int[] numlist, int[] matches)
-        {
-            int matchcount = 0;
-            foreach (int num in numlist)
-            {
-                if (CheckPrime(num) && num > 1)
-                {
-                    matchcount++;
-                }
-            }
-            return matches.Contains(matchcount);
         }
 
         public bool CheckNumberEndings(int[] numlist, int[] matches)
