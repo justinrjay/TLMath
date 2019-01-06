@@ -62,15 +62,19 @@
   <ItemGroup>
     <Compile Include="Boolean\LottoBaseClass.cs" />
     <Compile Include="Boolean\LottoComparison.cs" />
+    <Compile Include="Exclusions\Exclusions.cs" />
+    <Compile Include="Handlers\LastDigitHandler.cs" />
     <Compile Include="Handlers\MultiplesHandler.cs" />
     <Compile Include="Handlers\RangeHandler.cs" />
+    <Compile Include="Interfaces\BaseHandler.cs" />
+    <Compile Include="Interfaces\HandlerInterface.cs" />
     <Compile Include="Interface\LottoBase.cs" />
     <Compile Include="Math\LottoMath.cs" />
     <Compile Include="lottofunctions.cs" />
     <Compile Include="NumberGen\NumberGenerator.cs" />
-    <Compile Include="NumberGen\NumberRemoval.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\LastDigitHandlerTests.cs" />
     <Compile Include="Tests\MultiplesHandlerTests.cs" />
     <Compile Include="Tests\NumberGeneratorTests.cs" />
     <Compile Include="Tests\PrimeNumberHandlerTests.cs" />

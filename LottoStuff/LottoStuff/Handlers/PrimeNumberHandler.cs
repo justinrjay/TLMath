@@ -1,29 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LottoStuff
 {
-    public class PrimeNumberHandler
+    public class PrimeNumberHandler : BaseHandler
     {
-        private int _drawSize;
-        private List<int> _primeNumbersInDraw;
-
         public List<int> primeNumbersInDraw {
             get
             {
-                return _primeNumbersInDraw;
+                return frequencyComparisonList;
             }
         }
 
-        public PrimeNumberHandler(int drawSize) 
+        public PrimeNumberHandler(int drawPoolSize) : base(drawPoolSize)
         {
-            _drawSize = drawSize;
-            _primeNumbersInDraw = new List<int>();
-            _primeNumbersInDraw.Add(2);
-            buildPrimeNumbersInDraw();
+            frequencyComparisonList = buildPrimeNumbersInDraw();
         }
 
         public bool isPrime(int drawPossibility)
@@ -46,38 +38,28 @@ namespace LottoStuff
             return true;
         }
 
-        private void buildPrimeNumbersInDraw()
+        private List<int> buildPrimeNumbersInDraw()
         {
-            for (int i = 3; i <= _drawSize; i = i + 2)
+            List<int> primeNumbersInDraw = new List<int>();
+            primeNumbersInDraw.Add(2);
+            for (int i = 3; i <= drawPoolSize; i = i + 2)
             {
                 if (isPrime(i))
                 {
                     primeNumbersInDraw.Add(i);
                 }
             }
+            return primeNumbersInDraw;
         }
 
         public bool isNumberInPrimeList(int drawNumber)
         {
-            return _primeNumbersInDraw.Contains(drawNumber);
+            return primeNumbersInDraw.Contains(drawNumber);
         }
 
         public int numberOfPrimesInList(List<int> drawNumbers)
         {
-            return _primeNumbersInDraw.Intersect(drawNumbers).Count();
-        }
-
-        public int getFrequencyOfPrimesCollection(List<List<int>> drawcollection, int numberOfOccurrencesToCheck)
-        {
-            int numberOfOccurrences = 0;
-            for (int i = 0; i < drawcollection.Count; i++)
-            {
-                if (numberOfPrimesInList(drawcollection[i]) == numberOfOccurrencesToCheck)
-                {
-                    numberOfOccurrences++;
-                }
-            }
-            return numberOfOccurrences;
+            return primeNumbersInDraw.Intersect(drawNumbers).Count();
         }
     }
 }

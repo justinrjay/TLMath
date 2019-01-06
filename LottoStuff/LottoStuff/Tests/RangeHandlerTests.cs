@@ -150,13 +150,13 @@ namespace LottoStuff.Tests
             numlistcollection.Add(numlist3);
             numlistcollection.Add(numlist4);
 
-            Assert.Equal(4, rangeHandler.getSpecificFrequencyForRanges(numlistcollection, 0));
-            Assert.Equal(3, rangeHandler.getSpecificFrequencyForRanges(numlistcollection, 1));
-            Assert.Equal(1, rangeHandler.getSpecificFrequencyForRanges(numlistcollection, 2));
-            Assert.Equal(1, rangeHandler.getSpecificFrequencyForRanges(numlistcollection, 3));
-            Assert.Equal(1, rangeHandler.getSpecificFrequencyForRanges(numlistcollection, 4));
-            Assert.Equal(1, rangeHandler.getSpecificFrequencyForRanges(numlistcollection, 5));
-            Assert.Equal(1, rangeHandler.getSpecificFrequencyForRanges(numlistcollection, 6));
+            Assert.Equal(4, rangeHandler.getFrequencyOfOccurrence(numlistcollection, 0));
+            Assert.Equal(3, rangeHandler.getFrequencyOfOccurrence(numlistcollection, 1));
+            Assert.Equal(1, rangeHandler.getFrequencyOfOccurrence(numlistcollection, 2));
+            Assert.Equal(1, rangeHandler.getFrequencyOfOccurrence(numlistcollection, 3));
+            Assert.Equal(1, rangeHandler.getFrequencyOfOccurrence(numlistcollection, 4));
+            Assert.Equal(1, rangeHandler.getFrequencyOfOccurrence(numlistcollection, 5));
+            Assert.Equal(1, rangeHandler.getFrequencyOfOccurrence(numlistcollection, 6));
         }
     } 
 }

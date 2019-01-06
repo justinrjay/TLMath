@@ -6,29 +6,18 @@ using System.Threading.Tasks;
 
 namespace LottoStuff
 {
-    public class RangeHandler
+    public class RangeHandler : HandlerInterface
     {
         private int _drawSize;
         public int numberOfRanges { get; set; }
         public List<List<int>> rangeLists { get; }
         
-        public RangeHandler(int drawSize)
+        public RangeHandler(int drawSize, int precision = 10)
         {
             _drawSize = drawSize;
-            setNumberOfRanges();
+            numberOfRanges = drawSize / precision + 1;
             rangeLists = new List<List<int>>();
             buildRangeLists();
-        }
-
-        public void setNumberOfRanges()
-        {
-            int precision = 10;
-            while (_drawSize % precision != _drawSize)
-            { 
-                precision = precision * 10;
-            }
-            precision = precision / 10;
-            numberOfRanges = _drawSize / precision + 1; 
         }
 
         public void buildRangeLists()
@@ -80,7 +69,19 @@ namespace LottoStuff
             return false;
         }
 
-        public int getSpecificFrequencyForRanges(List<List<int>> drawCollection, int numberOfOccurrencesToCheck)
+        public bool checkFrequency(List<int> drawNumberList, int[] occurrencesToCheckArray)
+        {
+            foreach (int frequency in occurrencesToCheckArray)
+            {
+                if (checkIfAnyRangeOccursSpecificNumberOfTimes(drawNumberList, frequency))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public int getFrequencyOfOccurrence(List<List<int>> drawCollection, int numberOfOccurrencesToCheck)
         {
             int numberOfOccurrencesOfFrequency = 0;
             for (int i = 0; i < drawCollection.Count; i++)

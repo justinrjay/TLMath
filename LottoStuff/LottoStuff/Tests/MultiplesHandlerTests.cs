@@ -12,7 +12,7 @@ namespace LottoStuff.Tests
         private MultiplesHandler multiplesHandler;
         public MultiplesHandlerTests()
         {
-            multiplesHandler = new MultiplesHandler();
+            multiplesHandler = new MultiplesHandler(60);
         }
 
         [Theory]

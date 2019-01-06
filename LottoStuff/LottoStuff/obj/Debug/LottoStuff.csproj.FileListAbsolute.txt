@@ -21,3 +21,4 @@ D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\bin\Debug\xunit.execution.
 D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.csproj.CopyComplete
 D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.exe
 D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.pdb
+D:\Users\hukto\Documents\TLMath\LottoStuff\LottoStuff\obj\Debug\LottoStuff.csprojAssemblyReference.cache

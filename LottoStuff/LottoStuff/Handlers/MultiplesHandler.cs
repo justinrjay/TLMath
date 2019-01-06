@@ -6,42 +6,72 @@ using System.Threading.Tasks;
 
 namespace LottoStuff
 {
-    public class MultiplesHandler
+    public class MultiplesHandler : BaseHandler
     {
-        public int MultipleDivisor { get; set; }
-        public MultiplesHandler()
+        private int _multipleDivisor;
+        public int MultipleDivisor
         {
-
+            get
+            {
+                return _multipleDivisor;
+            }
+            set
+            {
+                if (_multipleDivisor != value || multiplesList == null)
+                {
+                    _multipleDivisor = value;
+                    frequencyComparisonList = buildMultiplesList();
+                }
+                
+            }
         }
-        public MultiplesHandler(int divisor)
+
+        public List<int> multiplesList
         {
+            get
+            {
+                return frequencyComparisonList != null ? frequencyComparisonList : new List<int>();
+            }
+        }
+
+        public MultiplesHandler(int drawPoolSize) : base(drawPoolSize)
+        {
+            this.drawPoolSize = drawPoolSize;
+        }
+        public MultiplesHandler(int drawPoolSize, int divisor) : base(drawPoolSize)
+        {
+            this.drawPoolSize = drawPoolSize;
             MultipleDivisor = divisor;
+        }
+
+        public List<int> buildMultiplesList()
+        {
+            List<int> multiplesInDrawPool = new List<int>();
+            int multiple = MultipleDivisor;
+            while (multiple <= drawPoolSize && multiple != 0)
+            {
+                multiplesInDrawPool.Add(multiple);
+                multiple += MultipleDivisor;
+            }
+            return multiplesInDrawPool;
         }
 
         public int getCountOfMultiplesInNumberList(List<int> drawNumber)
         {
-            int multipleCount = 0;
-            for (int i = 0; i < drawNumber.Count; i++)
-            {
-                if (drawNumber[i] % MultipleDivisor == 0)
-                {
-                    multipleCount++;
-                }
-            }
-            return multipleCount;
+            return multiplesList.Intersect(drawNumber).Count();
         }
 
-        public int getFrequencyOfMultipleCollection(List<List<int>> drawCollection, int numberOfOccurrencesToCheck)
+        public bool checkMultiplesFrequencies(List<int> drawNumber, Dictionary<int, int[]> multiplesDictionary)
         {
-            int numberOfOccurrences = 0;
-            for (int i = 0; i < drawCollection.Count; i++)
+            foreach (KeyValuePair<int, int[]> multipleFrequency in multiplesDictionary)
             {
-                if (getCountOfMultiplesInNumberList(drawCollection[i]) == numberOfOccurrencesToCheck)
+                MultipleDivisor = multipleFrequency.Key;
+                if (checkFrequency(drawNumber, multipleFrequency.Value))
                 {
-                    numberOfOccurrences++;
+                    return true;
                 }
             }
-            return numberOfOccurrences;
+            return false;
         }
     }
 }

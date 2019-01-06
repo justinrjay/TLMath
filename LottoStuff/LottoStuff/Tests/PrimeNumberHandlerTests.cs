@@ -82,11 +82,11 @@ namespace LottoStuff.Tests
             numcollection.Add(numlist4);
             numcollection.Add(numlist5);
 
-            Assert.Equal(1, primeNumberHandler.getFrequencyOfPrimesCollection(numcollection, 0));
-            Assert.Equal(1, primeNumberHandler.getFrequencyOfPrimesCollection(numcollection, 1));
-            Assert.Equal(1, primeNumberHandler.getFrequencyOfPrimesCollection(numcollection, 2));
-            Assert.Equal(1, primeNumberHandler.getFrequencyOfPrimesCollection(numcollection, 3));
-            Assert.Equal(1, primeNumberHandler.getFrequencyOfPrimesCollection(numcollection, 4));
+            Assert.Equal(1, primeNumberHandler.getFrequencyOfOccurrence(numcollection, 0));
+            Assert.Equal(1, primeNumberHandler.getFrequencyOfOccurrence(numcollection, 1));
+            Assert.Equal(1, primeNumberHandler.getFrequencyOfOccurrence(numcollection, 2));
+            Assert.Equal(1, primeNumberHandler.getFrequencyOfOccurrence(numcollection, 3));
+            Assert.Equal(1, primeNumberHandler.getFrequencyOfOccurrence(numcollection, 4));
         }
     }
 }
